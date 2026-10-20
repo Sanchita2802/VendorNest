@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #EEF1F8;
+    --bg-gradient-to: #E8ECF7;
+    --surface: #F6F8FD;
+    --surface-elevated: #FFFFFF;
+    --surface-sunken: #E5EAF4;
+    
+    --text-primary: #1B2140;
+    --text-secondary: #4A5272;
+    --text-muted: #6B7391;
+    
+    --accent-primary: #7C83FD;
+    --accent-primary-hover: #6970fc;
+    --accent-mint: #5ED6B0;
+    --accent-peach: #FFAB91;
+    --accent-sky: #7CC6FE;
+    --accent-yellow: #FFD97A;
+    --accent-rose: #FF8FB1;
+    
+    --status-pending-bg: #FFD97A;
+    --status-pending-text: #614700;
+    --status-delivered-bg: #7BE0A8;
+    --status-delivered-text: #0B4628;
+    --status-error-bg: #FF9AA2;
+    --status-error-text: #5C121B;
+
+    /* Clay shadow recipes (light) */
+    --clay-shadow-card: 14px 14px 28px rgba(163, 177, 198, 0.45),
+                        -12px -12px 24px rgba(255, 255, 255, 0.95),
+                        inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+                        inset -4px -4px 8px rgba(163, 177, 198, 0.25);
+
+    --clay-shadow-card-elevated: 18px 18px 36px rgba(163, 177, 198, 0.5),
+                                -14px -14px 28px rgba(255, 255, 255, 0.95),
+                                inset 6px 6px 12px rgba(255, 255, 255, 0.85),
+                                inset -6px -6px 12px rgba(163, 177, 198, 0.3);
+
+    --clay-shadow-btn-primary: 6px 6px 16px rgba(124, 131, 253, 0.4),
+                              -4px -4px 12px rgba(255, 255, 255, 0.8),
+                              inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                              inset -3px -3px 6px rgba(90, 97, 220, 0.35);
+
+    --clay-shadow-btn-secondary: 6px 6px 14px rgba(163, 177, 198, 0.4),
+                                -5px -5px 12px rgba(255, 255, 255, 0.9),
+                                inset 2px 2px 4px rgba(255, 255, 255, 0.7),
+                                inset -2px -2px 5px rgba(163, 177, 198, 0.25);
+
+    --clay-shadow-btn-pressed: inset 5px 5px 10px rgba(163, 177, 198, 0.45),
+                               inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+
+    --clay-shadow-input: inset 4px 4px 8px rgba(163, 177, 198, 0.35),
+                         inset -3px -3px 6px rgba(255, 255, 255, 0.9),
+                         2px 2px 5px rgba(163, 177, 198, 0.1);
+
+    --clay-shadow-pill: 4px 4px 10px rgba(163, 177, 198, 0.3),
+                        -3px -3px 8px rgba(255, 255, 255, 0.8),
+                        inset 1px 1px 2px rgba(255, 255, 255, 0.7),
+                        inset -1px -1px 3px rgba(163, 177, 198, 0.2);
+  }
+
+  [data-theme="dark"] {
+    --bg-main: #12142B;
+    --bg-gradient-to: #0C0E20;
+    --surface: #1B1E3D;
+    --surface-elevated: #242850;
+    --surface-sunken: #111326;
+    
+    --text-primary: #F2F4FF;
+    --text-secondary: #C5CAEC;
+    --text-muted: #9AA1CC;
+    
+    --accent-primary: #8E94FF;
+    --accent-primary-hover: #7b82ff;
+    --accent-mint: #4FD1A8;
+    --accent-peach: #FF9E80;
+    --accent-sky: #6BB8F5;
+    --accent-yellow: #FFD166;
+    --accent-rose: #FF7FA6;
+    
+    --status-pending-bg: #4B3C13;
+    --status-pending-text: #FFE699;
+    --status-delivered-bg: #143C28;
+    --status-delivered-text: #A8F0C6;
+    --status-error-bg: #4A161E;
+    --status-error-text: #FFBAC4;
+
+    /* Clay shadow recipes (dark) */
+    --clay-shadow-card: 14px 14px 28px rgba(0, 0, 0, 0.55),
+                        -8px -8px 20px rgba(45, 50, 95, 0.35),
+                        inset 2px 2px 4px rgba(255, 255, 255, 0.08),
+                        inset -3px -3px 6px rgba(0, 0, 0, 0.45);
+
+    --clay-shadow-card-elevated: 18px 18px 36px rgba(0, 0, 0, 0.65),
+                                -10px -10px 24px rgba(50, 56, 110, 0.4),
+                                inset 3px 3px 6px rgba(255, 255, 255, 0.1),
+                                inset -4px -4px 8px rgba(0, 0, 0, 0.5);
+
+    --clay-shadow-btn-primary: 6px 6px 18px rgba(0, 0, 0, 0.45),
+                              -3px -3px 10px rgba(142, 148, 255, 0.25),
+                              inset 2px 2px 3px rgba(255, 255, 255, 0.35),
+                              inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+
+    --clay-shadow-btn-secondary: 6px 6px 16px rgba(0, 0, 0, 0.4),
+                                -4px -4px 12px rgba(45, 50, 95, 0.3),
+                                inset 2px 2px 4px rgba(255, 255, 255, 0.07),
+                                inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+
+    --clay-shadow-btn-pressed: inset 5px 5px 12px rgba(0, 0, 0, 0.65),
+                               inset -3px -3px 8px rgba(45, 50, 95, 0.25);
+
+    --clay-shadow-input: inset 4px 4px 8px rgba(0, 0, 0, 0.55),
+                         inset -2px -2px 5px rgba(255, 255, 255, 0.05),
+                         1px 1px 3px rgba(0, 0, 0, 0.2);
+
+    --clay-shadow-pill: 4px 4px 10px rgba(0, 0, 0, 0.4),
+                        -2px -2px 6px rgba(45, 50, 95, 0.25),
+                        inset 1px 1px 2px rgba(255, 255, 255, 0.1),
+                        inset -1px -1px 3px rgba(0, 0, 0, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    background-image: radial-gradient(circle at 15% 20%, rgba(124, 131, 253, 0.08) 0%, transparent 40%),
+                      radial-gradient(circle at 85% 75%, rgba(94, 214, 176, 0.06) 0%, transparent 40%),
+                      linear-gradient(180deg, var(--bg-main) 0%, var(--bg-gradient-to) 100%);
+    color: var(--text-primary);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Fredoka', 'DM Sans', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Clay utility classes */
+.clay-card {
+  background-color: var(--surface);
+  box-shadow: var(--clay-shadow-card);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .clay-card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.clay-card-elevated {
+  background-color: var(--surface-elevated);
+  box-shadow: var(--clay-shadow-card-elevated);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .clay-card-elevated {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.clay-btn {
+  border-radius: 9999px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] .clay-btn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.clay-btn:active:not(:disabled) {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: var(--clay-shadow-btn-pressed) !important;
+}
+
+.clay-btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-hover) 100%);
+  color: #FFFFFF;
+  box-shadow: var(--clay-shadow-btn-primary);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.clay-btn-secondary {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  box-shadow: var(--clay-shadow-btn-secondary);
+}
+
+.clay-btn-secondary:hover:not(:disabled) {
+  background-color: var(--surface-elevated);
+  transform: translateY(-1px);
+}
+
+.clay-btn-danger {
+  background: linear-gradient(135deg, #FF7A8A 0%, #E85D6F 100%);
+  color: #FFFFFF;
+  box-shadow: 6px 6px 16px rgba(255, 122, 138, 0.35), -4px -4px 10px rgba(255, 255, 255, 0.7);
+}
+
+.clay-input {
+  background-color: var(--surface-sunken);
+  box-shadow: var(--clay-shadow-input);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  padding: 0.75rem 1.25rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.clay-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: var(--clay-shadow-input), 0 0 0 3px rgba(124, 131, 253, 0.25);
+}
+
+.clay-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: var(--clay-shadow-pill);
+}
+
+.clay-pill {
+  border-radius: 9999px;
+  box-shadow: var(--clay-shadow-pill);
+  background-color: var(--surface);
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(163, 177, 198, 0.5);
+  border-radius: 9999px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(100, 110, 160, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 131, 253, 0.7);
+}

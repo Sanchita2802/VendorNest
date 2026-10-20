@@ -1,0 +1,6 @@
+{
+  "name": "VendorNest — Vendor Management System",
+  "description": "DBMS Mini Project featuring an in-browser 3NF relational database engine, interactive 3D Nest experience, full CRUD for Vendors, Products, Orders, and Payments, SQL Terminal, and AI procurement tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
